@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: night --default;
+}
+
+/* Registrar la fuente local */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/montserrat-alternates/MontserratAlternates-Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* variable con fallback a sans-serif */
+:root {
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
+/* utilidad disponible junto a las utilidades de Tailwind */
+@layer utilities {
+  .font-montserrat {
+    font-family: var(--font-montserrat);
+  }
+}
+
+/* Definimos keyframes de animacion */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Creamos clase utility personalizada */
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
