@@ -5,7 +5,7 @@ import { ProductsService } from '@products/services/products.service';
 // import { ProductCardComponent } from "../../../products/components/product-card/product-card.component";
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'home-page',
   imports: [ProductCardComponent],
   templateUrl: './home-page.component.html',
 })

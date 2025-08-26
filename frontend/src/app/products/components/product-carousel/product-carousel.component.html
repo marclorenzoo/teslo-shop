@@ -2,7 +2,9 @@
 <div class="swiper" #swiperDiv>
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
+    <!-- Slides -->
     @for (image of images(); track $index) {
+
     <div class="swiper-slide">
       <img
         [src]="image | productImage"
@@ -20,4 +22,5 @@
   <div class="swiper-button-next"></div>
 
   <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
 </div>

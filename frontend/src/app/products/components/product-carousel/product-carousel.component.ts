@@ -7,11 +7,11 @@ import {
 } from '@angular/core';
 
 import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
-import { ProductsService } from '../../services/products.service';
 import { ProductImagePipe } from '@products/pipes/products-image.pipe';
 
 @Component({
@@ -20,9 +20,10 @@ import { ProductImagePipe } from '@products/pipes/products-image.pipe';
   templateUrl: './product-carousel.component.html',
   styles: `
     .swiper {
-      width: 100px;
-      height: 500px
+      width: 100%;
     }
+
+
   `,
 })
 export class ProductCarouselComponent implements AfterViewInit {
@@ -32,8 +33,6 @@ export class ProductCarouselComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     const element = this.swiperDiv().nativeElement;
     if (!element) return;
-
-    console.log({ element });
 
     const swiper = new Swiper(element, {
       // Optional parameters
